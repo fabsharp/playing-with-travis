@@ -61,7 +61,7 @@ WEBHOOK_DATA='{
     "fields": [
      {
         "name": "Release",
-        "value": "'"[babylon-runtime.$TRAVIS_TAG.zip](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/babylon-runtime.$TRAVIS_TAG.zip)"'",
+        "value": "'"[babylon-runtime.$TRAVIS_TAG.zip](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/babylon-runtime-$TRAVIS_TAG.zip)"'",
         "inline": false
       },
        {
