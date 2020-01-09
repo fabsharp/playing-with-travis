@@ -60,10 +60,12 @@ WEBHOOK_DATA='{
     "description": "'"${COMMIT_MESSAGE//$'\n'/ }"\\n\\n"$CREDITS"' ",
     "fields": [
        {
+        "name": "_r.js",
         "value": "'"[_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js)"'",
         "inline": false
       },
       {
+        "name": "_r.js.map",
         "value": "'"[_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js.map)"'",
         "inline": false
       }
