@@ -46,7 +46,7 @@ fi
 
 TIMESTAMP=$(date --utc +%FT%TZ)
 WEBHOOK_DATA='{
-  "username": "",
+  "username": "travis-ci",
   "avatar_url": "https://travis-ci.org/images/logos/TravisCI-Mascot-1.png",
   "embeds": [ {
     "color": '$EMBED_COLOR',
@@ -60,12 +60,12 @@ WEBHOOK_DATA='{
     "description": "'"${COMMIT_MESSAGE//$'\n'/ }"\\n\\n"$CREDITS"' ",
     "fields": [
        {
-        "name": "_r.js",
+        "name": "",
         "value": "'"[_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js)"'",
         "inline": false
       },
       {
-        "name": "_r.js.map",
+        "name": "",
         "value": "'"[_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js.map)"'",
         "inline": false
       }
