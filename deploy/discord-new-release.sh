@@ -74,13 +74,11 @@ WEBHOOK_DATA='{
   }, {
     "color": '$EMBED_COLOR',
     "author": {
-      "name": "npm package manager",
+      "name": "npm publish",
       "url": "https://www.npmjs.com/package/babylon-runtime",
       "icon_url" : "https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.png"
     },
-    "title": "test",
     "url" : "https://www.npmjs.com/package/babylon-runtime",
-    "description" : "package published",
     "timestamp":  "'"$TIMESTAMP"'"
    }]
 }'
