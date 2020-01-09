@@ -59,9 +59,14 @@ WEBHOOK_DATA='{
     "url": "'"$URL"'",
     "description": "'"${COMMIT_MESSAGE//$'\n'/ }"\\n\\n"$CREDITS"' ",
     "fields": [
+     {
+        "name": "Release",
+        "value": "'"[babylon-runtime.zip](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.zip)"'",
+        "inline": false
+      },
        {
-        "name": "Downloads",
-        "value": "'"[_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js) [_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js.map)"'",
+        "name": "Files",
+        "value": "'"[_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js) | [_r.js.map](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js.map)"'",
         "inline": false
       }
     ],

@@ -2,11 +2,16 @@ language: node_js
 node_js:
   - 8.11.3
 script:
+  - cd dist
+  - zip -r babylon-runtime-$TRAVIS_TAG.zip .
+  - ls
+  - cd ..
   - echo "Deploying to Github Releases..."
 deploy:
     provider: releases
     api_key: $GITHUB_OAUTH_TOKEN
     file:
+      - 'dist/babylon-runtime-${TRAVIS_TAG}.zip'
       - 'dist/_r.js'
       - 'dist/_r.js.map'
     skip_cleanup: true
