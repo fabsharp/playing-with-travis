@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "rollup -c && git add package.json && git add -A dist"
+    "version": "rollup -c && git add package.json && git add -A dist",
+    "postversion": "git push origin && git push origin --tags"
+
   },
   "keywords": [],
   "author": "",
