@@ -61,7 +61,7 @@ WEBHOOK_DATA='{
     "fields": [
      {
         "name": "Release",
-        "value": "'"[babylon-runtime.$TRAVIS_TAG.zip](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/babylon-runtime-$TRAVIS_TAG.zip)"'",
+        "value": "'"[babylon-runtime-$TRAVIS_TAG.zip](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/babylon-runtime-$TRAVIS_TAG.zip)"'",
         "inline": false
       },
        {
@@ -71,7 +71,14 @@ WEBHOOK_DATA='{
       }
     ],
     "timestamp": "'"$TIMESTAMP"'"
-  } ]
+  }, {
+    "color": '$EMBED_COLOR',
+    "author": {
+      "name": "npm package manager",
+      "url": "https://www.npmjs.com/package/babylon-runtime",
+      "icon_url" : "https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.png"
+    },
+   }]
 }'
 
 (curl --fail --progress-bar -A "TravisCI-Webhook" -H Content-Type:application/json -H X-Author:k3rn31p4nic#8383 -d "${WEBHOOK_DATA//	/ }" "$2" \
