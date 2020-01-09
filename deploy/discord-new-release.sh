@@ -57,21 +57,14 @@ WEBHOOK_DATA='{
     },
     "title": "'"$COMMIT_SUBJECT"'",
     "url": "'"$URL"'",
-    "description": "'"${COMMIT_MESSAGE//$'\n'/ }"\\n\\n"$CREDITS"'",
+    "description": "'"${COMMIT_MESSAGE//$'\n'/ }"\\n\\n"$CREDITS"' ",
     "fields": [
-      {
-        "name": "Commit",
-        "value": "'"[\`${TRAVIS_COMMIT:0:7}\`](https://github.com/$TRAVIS_REPO_SLUG/commit/$TRAVIS_COMMIT)"'",
-        "inline": true
-      },
-      {
-        "name": "Branch",
-        "value": "'"[\`$TRAVIS_BRANCH\`](https://github.com/$TRAVIS_REPO_SLUG/tree/$TRAVIS_BRANCH)"'",
-        "inline": true
-      },
        {
-        "name": "_r.js",
-        "value": "'"[_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/$TRAVIS_TAG/_r.js)"'",
+        "value": "'"[_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js)"'",
+        "inline": false
+      },
+      {
+        "value": "'"[_r.js](https://github.com/$TRAVIS_REPO_SLUG/releases/download/$TRAVIS_TAG/_r.js.map)"'",
         "inline": false
       }
     ],
