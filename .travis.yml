@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - 8.11.3
+script:
+  - echo "Deploying to Github Releases..."
+deploy:
+    provider: releases
+    api_key: $GITHUB_OAUTH_TOKEN
+    file:
+      - 'dist/_r.js'
+      - 'dist/_r.js.map'
+      - 'dist/_r.min.js'
+      - 'dist/_r.min.js.map'
+    skip_cleanup: true
+    on:
+      tags: true
+after_deploy:
+  - chmod +x ./deploy/discord-new-release.sh
+  - ./deploy/discord-new-release.sh success $WEBHOOK_URL
+after_failure:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
