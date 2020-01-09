@@ -4,7 +4,7 @@
   (global = global || self, global._r = factory());
 }(this, (function () { 'use strict';
 
-  console.log("_r v1.0.8")
+  console.log("_r v1.0.9")
 
   function createDefaultScene(canvas) {
       var engine = new BABYLON.Engine(canvas);
